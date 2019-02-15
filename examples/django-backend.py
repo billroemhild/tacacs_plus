@@ -31,7 +31,7 @@ class TACACSPlusBackend(object):
             logger.debug("Created TACACS+ user %s" % (username,))
         return user
 
-    def authenticate(self, username, password):
+    def authenticate(self, request, username, password):
         if not settings.TACACSPLUS_HOST:
             return None
         try:
